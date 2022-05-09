@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "adiaksdemo-eab9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "adiaksdemo-eab9"
+  template:
+    metadata:
+      labels:
+        app: "adiaksdemo-eab9"
+    spec:
+      containers:
+        - name: "adiaksdemo-eab9"
+          image: "acrdemo1207.azurecr.io/adiaksdemo"
+          ports:
+          - containerPort: 80
